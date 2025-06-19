@@ -32,6 +32,7 @@ module RubyLLM
 
       def create_parameters(input_schema)
         params = {}
+        puts "Input Schema: #{input_schema.inspect}"
         input_schema["properties"].each_key do |key|
           param = RubyLLM::MCP::Parameter.new(
             key,
